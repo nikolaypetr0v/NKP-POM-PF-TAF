@@ -1,0 +1,33 @@
+### WIN OS ###
+/.idea/
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+
+/skilloAutomation13.iml
+/out/*
+
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### UNIX OS ###
+\.idea\
+\skilloAutomation13.iml
+\out\*
+target\
+.idea\modules.xml
+.idea\jarRepositories.xml
+.idea\compiler.xml
+.idea\libraries/
+
+!.mvn\wrapper\maven-wrapper.jar
+!**\src\main\**\target\
+!**\src\test\**\target\
+
+.DS_Store
