@@ -29,8 +29,8 @@ public class HomePage {
 
     //4.UserActions
     public void openHomePage () {
-     this.driver.get(HOME_PAGE_URL);
-     wait.until(ExpectedConditions.urlContains(HOME_PAGE_URL));
+        this.driver.get(HOME_PAGE_URL);
+        wait.until(ExpectedConditions.urlContains(HOME_PAGE_URL));
     }
 
     public void navigateToLoginPageViaClickOnNavigationLoginButton(){
@@ -44,7 +44,7 @@ public class HomePage {
     private void waitAndClick(WebElement elm) {
         wait.until(ExpectedConditions.visibilityOf(elm));
         elm.click();
-        System.out.println("THE USER HAS CLICKED ON "+ elm);
+        System.out.println("THE USER HAS CLICKED ON " + elm);
     }
 
 }

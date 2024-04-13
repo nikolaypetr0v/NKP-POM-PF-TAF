@@ -42,15 +42,12 @@ public class LoginPage {
         PageFactory.initElements(driver,this);
     }
 
-
     //User Actions
     public void  typeText() throws InterruptedException {
         usernameInputField.clear();
         usernameInputField.sendKeys("Testing Testing ");
-
         Thread.sleep(5444);
     }
-
 
     //6.Support verification methods
     private void waitAndClick(WebElement elm) {
@@ -58,5 +55,4 @@ public class LoginPage {
         elm.click();
         System.out.println("THE USER HAS CLICKED ON "+ elm);
     }
-
 }

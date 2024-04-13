@@ -17,11 +17,9 @@ public class TestBase {
     @BeforeTest
     public void tearUp(){
         this.driver = new ChromeDriver();
-
         this.driver.manage().window().maximize();
         this.driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(11));
         this.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
-
         System.out.println(" THE CHROME BROWSER HAS STARTED ");
     }
 
