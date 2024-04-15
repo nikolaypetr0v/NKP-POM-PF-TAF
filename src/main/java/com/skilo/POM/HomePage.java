@@ -46,5 +46,4 @@ public class HomePage {
         elm.click();
         System.out.println("THE USER HAS CLICKED ON " + elm);
     }
-
 }

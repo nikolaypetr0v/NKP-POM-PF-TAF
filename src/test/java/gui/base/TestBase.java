@@ -25,18 +25,17 @@ public class TestBase {
 
     @AfterTest
     public void tearDown(){
-        if (this.driver !=null){
+        if (this.driver != null){
             this.driver.quit();
         }
     }
 
-    public void sleepy(long miliSec){
+    public void sleepy(long milliSec){
         try {
-            Thread.sleep(miliSec);
+            Thread.sleep(milliSec);
         }catch (InterruptedException e){
             e.printStackTrace();
         }
     }
-
 }
 

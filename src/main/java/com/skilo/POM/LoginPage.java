@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import javax.swing.plaf.TableHeaderUI;
 import java.time.Duration;
 
 public class LoginPage {
@@ -43,16 +42,41 @@ public class LoginPage {
     }
 
     //User Actions
-    public void  typeText() throws InterruptedException {
+    public void typeText() throws InterruptedException {
         usernameInputField.clear();
         usernameInputField.sendKeys("Testing Testing ");
         Thread.sleep(5444);
+    }
+
+    public void openLoginPage () {
+        this.driver.get(LOGIN_PAGE_URL);
+        wait.until(ExpectedConditions.urlContains(LOGIN_PAGE_URL));
+    }
+
+    public void enterUsername(String username) throws InterruptedException {
+        usernameInputField.clear();
+        usernameInputField.sendKeys(username);
+        Thread.sleep(5444);
+    }
+
+    public void enterPassword(String pass) throws InterruptedException {
+        passwordInputField.clear();
+        passwordInputField.sendKeys(pass);
+        Thread.sleep(5444);
+    }
+
+    public void selectRememberMeCheckbox(WebElement checkboxInput){
+        wait.until(ExpectedConditions.visibilityOf(checkboxInput));
+        if(!rememberMeCheckBox.isSelected()){
+            checkboxInput.click();
+            System.out.println("The user selected the \"Remember me\" checkbox.");
+        }
     }
 
     //6.Support verification methods
     private void waitAndClick(WebElement elm) {
         wait.until(ExpectedConditions.visibilityOf(elm));
         elm.click();
-        System.out.println("THE USER HAS CLICKED ON "+ elm);
+        System.out.println("THE USER HAS CLICKED ON " + elm.getText());
     }
 }
