@@ -29,7 +29,7 @@ public class LoginPage {
     private WebElement rememberMeLabelText;
     @FindBy (xpath = "//input[contains(@formcontrolname,'rememberMe')]")
     private WebElement rememberMeCheckBox;
-    @FindBy (xpath = "#sign-in-button")
+    @FindBy (id = "sign-in-button")
     private WebElement loginFormSubmitButton;
     @FindBy (xpath = "//a[contains(.,'Register')]")
     private WebElement loginFormRegistrationLink;
@@ -56,13 +56,13 @@ public class LoginPage {
     public void enterUsername(String username) throws InterruptedException {
         usernameInputField.clear();
         usernameInputField.sendKeys(username);
-        Thread.sleep(5444);
+        Thread.sleep(3333);
     }
 
     public void enterPassword(String pass) throws InterruptedException {
         passwordInputField.clear();
         passwordInputField.sendKeys(pass);
-        Thread.sleep(5444);
+        Thread.sleep(3333);
     }
 
     public void selectRememberMeCheckbox(WebElement checkboxInput){
@@ -71,6 +71,10 @@ public class LoginPage {
             checkboxInput.click();
             System.out.println("The user selected the \"Remember me\" checkbox.");
         }
+    }
+
+    public void clickOnSignInBtn(){
+        waitAndClick(loginFormSubmitButton);
     }
 
     //6.Support verification methods

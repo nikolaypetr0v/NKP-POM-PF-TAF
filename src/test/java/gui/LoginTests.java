@@ -51,11 +51,9 @@ public class LoginTests extends TestBase {
     public void verifyLoginPageLayout(){
         System.out.println("VERIFY THE LOGIN PAGE LAYOUT.");
         System.out.println();
-        sleepy(WAIT);
 
         LoginPage loginPage = new LoginPage(super.driver);
         loginPage.openLoginPage();
-        sleepy(WAIT);
         System.out.println("The user has opened the ISkillo LoginPage.");
         System.out.println();
 
@@ -65,7 +63,6 @@ public class LoginTests extends TestBase {
         Assert.assertEquals(actualLoginFormHeaderText, LOGIN_PAGE_HEADER_TXT_LOCATOR);
         System.out.println("There is a match! Actual login page header matches the criteria ");
         System.out.println();
-        sleepy(WAIT);
 
         System.out.println("Verify username input field is per requirements.");
         WebElement userNameInputField = driver.findElement(By.cssSelector(LOGIN_PAGE_USERNAME_ID_LOCATOR));
@@ -73,7 +70,6 @@ public class LoginTests extends TestBase {
         Assert.assertEquals(actualUserNameInputFieldId, LOGIN_PAGE_USERNAME_ID);
         System.out.println("There is a match between actual username input field id " + actualUserNameInputFieldId + " :: " + LOGIN_PAGE_USERNAME_ID);
         System.out.println();
-        sleepy(WAIT);
 
         System.out.println("Verify password input field is per requirements.");
         WebElement passwordInputField = driver.findElement(By.cssSelector(LOGIN_PAGE_PASSWORD_ID_LOCATOR));
@@ -81,7 +77,6 @@ public class LoginTests extends TestBase {
         Assert.assertEquals(actualPasswordInputFieldId, LOGIN_PAGE_PASSWORD_ID);
         System.out.println("There is a match between actual password input field id " + actualPasswordInputFieldId + " :: " + LOGIN_PAGE_PASSWORD_ID);
         System.out.println();
-        sleepy(WAIT);
 
         System.out.println("Verify \"Remember me\" checkbox input is per requirements.");
         WebElement rememberMeCheckboxInput = driver.findElement(By.cssSelector(LOGIN_PAGE_REMEMBER_ME_CHECKBOX_INPUT_LOCATOR));
@@ -89,41 +84,33 @@ public class LoginTests extends TestBase {
         Assert.assertTrue(isRememberMeCheckBoxDisplayed);
         System.out.println("The \"Remember me\" checkbox is displayed :: " + isRememberMeCheckBoxDisplayed);
         System.out.println();
-        sleepy(WAIT);
 
         System.out.println("Verify \"Remember me\" checkbox label is shown as per requirements.");
         WebElement rememberMeCheckBoxLbl = driver.findElement(By.xpath(LOGIN_PAGE_REMEMBER_ME_LBL_LOCATOR));
         String actualRememberMeLblTxt = rememberMeCheckBoxLbl.getText();
         Assert.assertEquals(actualRememberMeLblTxt, LOGIN_PAGE_REMEMBER_ME_TXT_LOCATOR);
         System.out.println("There is a match between actual remember me label text " + actualRememberMeLblTxt + " :: " + LOGIN_PAGE_REMEMBER_ME_TXT_LOCATOR);
-        //consoleLoggerForAMatch(actualRememberMeLabelText,expectedRememberMeLabelText);
         System.out.println();
-        sleepy(WAIT);
 
         System.out.println("Verify \"Sign in\" button is shown as per requirements.");
         WebElement signInBtn = driver.findElement(By.cssSelector(SIGN_IN_BTN_ID_LOCATOR));
         String actualSignInBtnId = signInBtn.getAttribute("id");
         Assert.assertEquals(actualSignInBtnId, SIGN_IN_BTN_ID);
-        System.out.println("There is a match between actual sign in button id" + actualSignInBtnId + " :: " + SIGN_IN_BTN_ID);
+        System.out.println("There is a match between actual sign in button id " + actualSignInBtnId + " :: " + SIGN_IN_BTN_ID);
         System.out.println();
-        sleepy(WAIT);
 
         System.out.println("Verify \"Not a member?\" label is presented as per requirements ");
         WebElement registrationPromptLbl = driver.findElement(By.xpath(NOT_A_MEMBER_LBL_TXT_LOCATOR));
         String actualRegistrationPromptLblTxt = registrationPromptLbl.getText();
         Assert.assertEquals(actualRegistrationPromptLblTxt, NOT_A_MEMBER_LBL_TXT);
         System.out.println("There is a match between actual sign \"Not a member?\" registration prompt text " + actualRegistrationPromptLblTxt + " :: " + NOT_A_MEMBER_LBL_TXT);
-        //consoleLoggerForAMatch(actualRegistrationPorptLabelText,expectedLoginPageRegistrationPrompText);
         System.out.println();
-        sleepy(WAIT);
 
         System.out.println("Verify \"Register\" link is presented as per requirements ");
         WebElement registrationHyperLink = driver.findElement(By.xpath(REGISTER_LINK_LOCATOR));
         String actualRegistrationLinkTxt = registrationHyperLink.getText();
         Assert.assertEquals(actualRegistrationLinkTxt, REGISTER_LINK_TXT);
         System.out.println("There is a match between actual registration hyperlink " + actualRegistrationLinkTxt + " :: " + REGISTER_LINK_TXT);
-        //consoleLoggerForAMatch(actualRegistrationLinkLabelText,expectedRegistrationLinkLabelText);
-        sleepy(WAIT);
 
         System.out.println("========================================================================================");
         System.out.println();
@@ -151,11 +138,14 @@ public class LoginTests extends TestBase {
         loginPage.selectRememberMeCheckbox(rememberMeCheckbox);
         sleepy(WAIT);
 
-        WebElement signInBtn = driver.findElement(By.cssSelector(SIGN_IN_BTN_ID_LOCATOR));
-        String actualSignInBtnId = signInBtn.getAttribute("id");
-        Assert.assertEquals(actualSignInBtnId, SIGN_IN_BTN_ID);
-        signInBtn.click();
-        System.out.println("The user clicked on the sign-in button.");
+//        WebElement signInBtn = driver.findElement(By.cssSelector(SIGN_IN_BTN_ID_LOCATOR));
+//        String actualSignInBtnId = signInBtn.getAttribute("id");
+//        Assert.assertEquals(actualSignInBtnId, SIGN_IN_BTN_ID);
+//        signInBtn.click();
+//        System.out.println("The user clicked on the sign-in button.");
+//        sleepy(WAIT);
+
+        loginPage.clickOnSignInBtn();
         sleepy(WAIT);
 
         boolean isProfileBtnDisplayed = driver.findElement(By.cssSelector(PROFILE_BTN_ID_LOCATOR)).isDisplayed();
